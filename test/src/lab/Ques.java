@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
 /*
 import lab.Ques1.CompareLengthOfWord;
 */
@@ -15,7 +16,13 @@ class Ques
 	{
 		try 
 		{
-		BufferedReader in = new BufferedReader(new FileReader("word.txt"));
+			String fname;
+			 Scanner scan = new Scanner(System.in);
+		       
+		        System.out.print("Enter the file name u want open with its extension ");
+		        fname = scan.nextLine();
+		        
+		BufferedReader in = new BufferedReader(new FileReader(fname));
 		String str;
 		
 			
