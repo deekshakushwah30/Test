@@ -15,7 +15,7 @@ class Ques
 	{
 		try 
 		{
-		BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\pc\\Desktop\\abc.txt"));
+		BufferedReader in = new BufferedReader(new FileReader("word.txt"));
 		String str;
 		
 			

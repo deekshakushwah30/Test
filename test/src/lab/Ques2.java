@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 public class Ques2 {	
 
-	//For each string cache result in a HashMap<Node, Boolean>
+
 	class Point {
 		int start;
 		int end;
@@ -30,7 +30,7 @@ public class Ques2 {
 	        	return ((this.start == a.start) && (this.end == a.end));
 		}
 	
-		//Prime numbers in hashcode to minimise collision
+		
 		@Override
 		public int hashCode() {
 			int h1 = 7;
@@ -54,13 +54,13 @@ public class Ques2 {
 		
 	}
 	
-	//remove the string when processing from the sorted arraylist
+	
 	void delete(String str){
 		int pos = Binsrch(str, this.slist, 0, this.slist.size()-1);
 		this.slist.remove(pos);
 	}
 	
-	//read the strings from input file and put in an arraylist
+	
 	void read(String path){		
 		String str = null;
 		BufferedReader reader = null;
@@ -83,7 +83,7 @@ public class Ques2 {
 		}
 	}
 	
-	//Binary search for the substring in the sorted list, return the index where found.
+
 	int Binsrch(String searchString, ArrayList<String> stringsArr, int start, int end) {
 		if(start > end || searchString.length() < smallest)
 			return -1;
@@ -98,7 +98,7 @@ public class Ques2 {
 			return Binsrch(searchString, stringsArr, start, middle-1);
 	}
 	
-	//Wrapper for Binary Search
+
 	boolean CheckIfPresent(String str) {
 		
 		if(Binsrch(str, this.slist, 0,this. slist.size()-1) == -1) {
@@ -107,8 +107,7 @@ public class Ques2 {
 		
 		return true;
 	}
-		
-	//Generate substring combinations for the string and find if present in sorted list
+
 	boolean generateCombinations(String str, int beg, int last,  HashMap<Point, Boolean> cache) {
 		
 		if(str.length() == 0) {
@@ -142,7 +141,7 @@ public class Ques2 {
 		return false;
 	}
 	
-	//Compare strings based on length in the descending order
+	
 	static class myComparator implements Comparator<String> {
 		@Override
 		public int compare(String s1, String s2) {
@@ -150,7 +149,6 @@ public class Ques2 {
 		}
 	} 
 	
-	//Get the first, second longest string and count of strings that are formed from strings present in the sorted list
 	void getOutput(String path) {
 		read(path);
 		this.llength = new ArrayList<String>(this.slist);
@@ -170,12 +168,12 @@ public class Ques2 {
 					System.out.println("and seclargest compound word is   : "+str);
 			}		
 		}
-		/*System.out.println("Total number of words: " +counter);*/
+		
 	}
 
 	public static void main(String[] args) {
 		Ques2 q = new Ques2();
-		String path = "C:\\Users\\pc\\Desktop\\p1.txt";
+		String path = "words1.txt";
 		q.getOutput(path);
 	}
 }
